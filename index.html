@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Icons Example</title>
+
+    <!-- Include Google Material Icons styles -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(18, 58, 55);
+           
+        }
+
+        .wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            width: 1000px;
+            
+        }
+
+        .material-icons-outlined {
+            font-size: 5rem; /* Preferred icon size */
+            display: inline-block;
+            
+        }
+
+        .system{
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 80px;
+            
+        }
+        .l-text {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .s-text {
+            font-size: 1rem;
+            margin-bottom: 75px;
+        }
+
+        .inform{
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .mum{
+            margin-top: 30px;
+        }
+
+        #dynamic{
+            position: relative;
+            display: inline-block;
+
+        }
+
+        #dynamic::after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 4px;
+            height: 100%;
+            background-color: white;
+        }
+
+        #dynamic.active::after{
+            display: none;
+        }
+
+        .finger{
+            cursor: pointer;
+        }
+
+        .finger:hover
+        {
+            cursor: url(touchapp.png) 20 30, auto;
+        }
+
+        .screen {
+            display: block;
+        }
+
+        .onblock {
+            display: none;
+        }
+
+        .first{
+            border: 10pt ridge #3e645c;
+                    padding: 50px;
+        }
+
+        .second{
+            width: 1000px;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            animation: flowBg 2s infinite linear;
+            
+        }
+            
+            
+            @keyframes flowBg {
+                from{ 
+                    background-position: 0 0;
+                }
+                to{
+                    background-position: -50vw 0;
+                }
+                
+            }
+            
+        
+
+
+
+        
+        /* 커서 사라지기 */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="first screen">
+        <p id="dynamic" class="system"></p>
+        
+        <p class="l-text ">본인확인할게요~</p>
+        <p class="s-text">가입하셨다고요? 아~ 지문대충대고넘어가시죠</p>
+      
+        <div onclick="toggleScreen()" class="material-icons-outlined finger" >
+            fingerprint
+        </div>
+        <p class="mum">(여기 대우가 왜이래? 지문인식을 하자...)</p>
+        </div>
+        <div class="second">
+        <p class="inform">어서오세요 
+            <br>삶은 개구리 증후군(Boiled Frog Syndrome)이 뭐냐면요 
+
+            <br> 다음시간에 공개됩니다!
+        </p>
+        <img src="./pepe.gif" style="width: 500px;">
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
